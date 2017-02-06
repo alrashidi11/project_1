@@ -1,7 +1,16 @@
-
+div{
+  text-align: center;
+  color : white;
+}
+.center{
+  text-align: center;
+}
 .isPrime{
-  background-color: : #4CAF50;
+  background-color: #81a9e8;
 }
 .isNotPrime{
-  background-color: #e51c23;
+  background-color: #f29696;
 }
+
+
+
