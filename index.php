@@ -1,50 +1,101 @@
-<html>
-<head>
-  <link rel="stylesheet" href="/style.css" type="text/css">
-  <title>Prime Number Validator</title>
-</head>
+</head> 
+
 <body>
 
-  <form method="POST">
-    What number would you like to check <br>
-    <input type="int" name="info" value="Enter number"></input>
+
+
+  <form method="GET" class= "center">
+
+    <h3>What number would you like to check?</h3>
+
+    <input type="int" name="info"></input><br><br>
+
     <input type="submit">
+
   </form>
 
   <?php
-  $num = 0
-  $num = $_GET['info']
-  echo $num;
+
+
+
+  $num;
+
+       if($_GET['info'] != NULL){
+
+          $num = $_GET['info'];
+
+        }
 
   if ($num == 1){
-    echo '<p class= "isNotPrime">'
-    echo $num
-    echo '</p>'
-  }
+
+    echo '<div class= "isNotPrime">';
+
+    echo $num;
+
+    echo '<div> This is not a prime number</div></div>';
+
+  }else
+
   if($num == 2){
-    echo '<p class= "isPrime">'
-    echo $num
-    echo '</p>'
-  }
+
+    echo '<div class= "isPrime">';
+
+    echo $num;
+
+    echo '<div> This is a prime number</div></div>';
+
+  }else
+
   if ($num % 2 == 0){
-    echo '<p class= "isNotPrime">'
-    echo $num
-    echo '</p>'
-  }
+
+    echo '<div class="isNotPrime">';
+
+    echo $num;
+
+    echo '<div> This is not a prime number</div></div>';
+
+  }else
+
   if ($num > 2) {
+
     $rootOfNum = ceil(sqrt($num));
-    for($i = 3; $i <= $ceil; $i = $i++) {
+
+    $p = FALSE;
+
+    for($i = 3; $i <= $rootOfNum; $i++) {
+
       if($num % $i == 0){
-        //return false
-        echo '<p class= "isNotPrime">'
-        echo $num
-        echo '</p>'
-        break;
-      }
-    }
+
+        $p = TRUE;
+
+        }
+
+}
+
+      if($p == TRUE){
+
+        echo '<div class= "isNotPrime">';
+
+        echo $num;
+
+        echo '<div> This is not a prime number</div></div>';
+
+        }else{
+
+echo '<div class= "isPrime">';
+
+        echo $num;
+
+        echo '<div> This is a prime number</div></div>';
+
+     }
+
   }
+
+
 
   ?>
 
-</body>
-</html>
+
+
+</body> </html>
